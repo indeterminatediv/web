@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A premium interactive proposal website" />
+    <title>Our Beautiful Beginning ❤️</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="loading-overlay" aria-live="polite">
+      <div class="loader" aria-hidden="true"></div>
+    </div>
+
+    <div id="hearts" aria-hidden="true"></div>
+    <div id="petals" aria-hidden="true"></div>
+    <div id="sparkles" aria-hidden="true"></div>
+    <div class="cursor-sparkle" aria-hidden="true"></div>
+
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+
+    <section class="page active" id="page1" aria-label="Welcome page">
+      <div class="glass">
+        <h1 class="mainTitle">Hi ❤️</h1>
+        <p class="subtitle">
+          I made something special just for you.<br /><br />
+          It will only take one minute.
+        </p>
+        <div class="buttons">
+          <button class="primaryBtn" data-next="2">Open It ❤️</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="page" id="page2" aria-label="Story page">
+      <div class="glass">
+        <h2>Sometimes our story began with families.</h2>
+        <p class="story section">
+          But love is never arranged.<br /><br />
+          It is built...<br /><br />
+          One smile.<br />
+          One conversation.<br />
+          One memory.<br />
+          One day at a time.
+        </p>
+        <div class="buttons">
+          <button class="primaryBtn" data-next="3">Continue</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="page" id="page3" aria-label="Typewriter page">
+      <div class="glass" style="display:flex;flex-direction:column;justify-content:center;min-height:70vh;">
+        <h2 id="typewriter-heading">Om ❤️ Deeksha</h2>
+        <div id="typewriter" class="section" aria-live="polite" style="min-height:180px;"></div>
+      </div>
+    </section>
+
+    <section class="page" id="page4" aria-label="Proposal page">
+      <div class="glass questionCard">
+        <h1>Shall we turn this arranged marriage into our beautiful love story?</h1>
+        <div class="buttons">
+          <button class="yesBtn" onclick="celebrate()">💖 Yes, Let's Begin</button>
+          <button id="noBtn" class="noBtn" type="button">🤔 Maybe...</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="page" id="celebration" aria-label="Celebration page">
+      <div class="glass celebrationBox">
+        <h1 class="love">❤️</h1>
+        <h1>You just made me the happiest person.</h1>
+        <p>
+          Maybe our families introduced us...<br /><br />
+          But every beautiful tomorrow begins with us choosing each other.
+        </p>
+        <div class="promise">
+          Engagement: 12 Oct 2026<br />
+          Wedding: 12 Dec 2026<br /><br />
+          ❤️ I promise to respect you<br />
+          ❤️ I promise to support your dreams<br />
+          ❤️ I promise to stand beside you<br />
+          ❤️ I promise to make you smile<br />
+          ❤️ I promise to always keep trying
+        </div>
+        <div class="signature">
+          With Love,<br />
+          <span>Om ❤️</span>
+        </div>
+        <div class="buttons">
+          <button class="primaryBtn" onclick="showLetter()">Read My Letter 💌</button>
+          <button class="secondaryBtn" data-next="6">See Our Memories ✨</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="page" id="timeline-page" aria-label="Timeline and countdown page">
+      <div class="glass">
+        <div class="section">
+          <h2>Our timeline</h2>
+          <div class="timeline">
+            <div class="timeline-item"><strong>First Conversation</strong><br />A simple hello became the beginning of everything.</div>
+            <div class="timeline-item"><strong>First Meeting</strong><br />The world felt softer in that moment.</div>
+            <div class="timeline-item"><strong>Engagement</strong><br />12 Oct 2026, a beautiful beginning.</div>
+            <div class="timeline-item"><strong>Wedding</strong><br />12 Dec 2026, a day filled with love and family.</div>
+            <div class="timeline-item"><strong>Forever ❤️</strong><br />Every day after will be our chapter together.</div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>Counting down</h2>
+          <div class="countdown" id="countdown">
+            <div class="countdown-card"><strong id="days">0</strong><span>Days</span></div>
+            <div class="countdown-card"><strong id="hours">0</strong><span>Hours</span></div>
+            <div class="countdown-card"><strong id="minutes">0</strong><span>Minutes</span></div>
+            <div class="countdown-card"><strong id="seconds">0</strong><span>Seconds</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">Made with ❤️ by Om</footer>
+
+    <div id="letterPopup" role="dialog" aria-modal="true" aria-label="Love letter">
+      <div class="letter">
+        <span class="close" onclick="closeLetter()" aria-label="Close letter">×</span>
+        <h2>Dear ❤️</h2>
+        <p class="letter-body">
+          Maybe we met because our families introduced us.<br /><br />
+          But I hope every moment after today is because we choose each other.<br /><br />
+          I don't promise a perfect life.<br /><br />
+          I promise a sincere heart.<br /><br />
+          Someone who will celebrate your happiness, stand beside you during difficult days, and make you laugh.<br /><br />
+          Thank you for coming into my life.<br /><br />
+          ❤️
+        </p>
+      </div>
+    </div>
+
+    <div class="lightbox" id="lightbox" aria-label="Photo lightbox">
+      <img id="lightbox-img" src="" alt="Expanded photo" />
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
